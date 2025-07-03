@@ -7,12 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest  
     steps:
-      - name: Build project
-        run: echo "Build project..."
-  
-  testing:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test project
-        run: echo "Starting test project..."
+      - name: System name
+        run: cat /etc/os-release
+      - name: Kernel version
+        run: uname -r
     
