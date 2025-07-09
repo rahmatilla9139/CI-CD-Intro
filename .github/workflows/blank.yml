@@ -5,12 +5,12 @@ on:
       main
 jobs:
   build:
-    runs-on: self-hosted  
+    runs-on: ubuntu-latest  
     steps:
       - name: System name
         run: cat /etc/os-release
       - name: Kernel version
-        run: uname -r
-      - name: Docker version
-        run: docker version
+        run: uname -a
+      - name: About runner
+        run: ${{ toJson(runner) }}
     
