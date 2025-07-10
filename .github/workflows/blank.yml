@@ -4,13 +4,21 @@ on:
     branches: 
       main
 jobs:
-  build:
+  job-1:
     runs-on: ubuntu-latest  
     steps:
       - name: System name
         run: cat /etc/os-release
       - name: Kernel version
         run: uname -a
-      - name: About runner
-        run: ${{ toJson(runner) }}
+  job-2:
+    needs: job-1
+    runs-on: ubuntu-latest
+    container: 
+      image: alpine:latest
+    steps:
+      - name: System name
+        run: cat /etc/os-release
+      - name: Kernel version
+        run: uname -a
     
