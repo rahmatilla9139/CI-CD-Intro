@@ -2,7 +2,7 @@ name: CI-CD_Intro
 on:
   push:
     branches: 
-      main
+      - main
 jobs:
   job-1:
     runs-on: self-hosted  
@@ -21,4 +21,16 @@ jobs:
         run: cat /etc/os-release
       - name: Kernel version
         run: uname -a
+  greeting_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run my Docker Action
+        # Ссылка на ваш Action в этом же репозитории
+        uses: ./github/actions  # Указывает на корневую директорию
+        with:
+          # Передаем значение для 'who-to-greet'
+          who-to-greet: "William 'Case' Calderon"
     

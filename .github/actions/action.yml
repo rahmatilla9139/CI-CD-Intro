@@ -1,0 +1,19 @@
+# Имя вашего Action
+name: 'Docker Greeting Action'
+
+# Краткое описание
+description: 'Greets a user from within a Docker container.'
+
+# Входные данные, которые принимает ваш Action
+inputs:
+  who-to-greet:
+    description: 'The name of the person to greet.'
+    required: true
+    default: 'World'
+
+# Описание того, как запускать этот Action
+runs:
+  # Указываем, что он использует Docker
+  using: 'docker'
+  # Указываем путь к Dockerfile
+  image: 'Dockerfile'
