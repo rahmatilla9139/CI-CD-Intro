@@ -6,7 +6,7 @@ on:
       - test
 jobs:
   job-1:
-    runs-on: self-hosted  
+    runs-on: ubuntu-latest
     steps:
       - name: System name
         run: cat /etc/os-release
