@@ -1,0 +1,9 @@
+name: 'Simple custom action'
+description: 'For educational use only'
+inputs:
+  fullname:
+    required: true
+    description: 'Print Hello ${fullname} message'
+runs:
+  using: docker
+  image: Dockerfile
